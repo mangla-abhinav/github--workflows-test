@@ -1,0 +1,23 @@
+{
+  "name": "github--workflows-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangla-abhinav/github--workflows-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mangla-abhinav/github--workflows-test/issues"
+  },
+  "homepage": "https://github.com/mangla-abhinav/github--workflows-test#readme",
+  "devDependencies": {
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0"
+  }
+}
