@@ -10,7 +10,7 @@ jobs:
           node-version: '14'
       - run: npm install --save-dev stylelint stylelint-config-standard
       - name: Create File
-      - uses: finnp/create-file-action@1.0.0
+        uses: finnp/create-file-action@1.0.0
           env:
             FILE_NAME: '.stylelintrc.json'
             FILE_DATA: '{"extends": "stylelint-config-standard"}'
