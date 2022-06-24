@@ -4,17 +4,17 @@ on:
     branches:
       - develop
 jobs:
-  stylelint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      # - run: npm install --save-dev stylelint stylelint-config-standard
-      # - run: npx stylelint "**/*.css"
+  # stylelint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: '14'
+  # - run: npm install --save-dev stylelint stylelint-config-standard
+  # - run: npx stylelint "**/*.css"
   s3_sync:
-    needs: stylelint
+    # needs: stylelint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,10 +24,5 @@ jobs:
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install --update
-      - run:
-          aws configure
-          # AWS Access Key ID [None]: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          # AWS Secret Access Key [None]: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # Default region name [None]: ap-south-1
-          # Default output format [None]: json
-      # - run: aws s3 ls
+      - run: aws configure AWS Access Key ID [None]: ${{ secrets.AWS_ACCESS_KEY_ID }} AWS Secret Access Key [None]: ${{ secrets.AWS_SECRET_ACCESS_KEY }} Default region name [None]: ap-south-1 Default output format [None]: json
+      - run: aws s3 ls
