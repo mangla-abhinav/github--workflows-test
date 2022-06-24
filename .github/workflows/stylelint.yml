@@ -1,8 +1,9 @@
 name: stylelint
-on: [push]
-  branches:
-    - develop
-    - feature
+on:
+  push:
+    branches:
+      - develop
+      - feature
 jobs:
   stylelint:
     runs-on: ubuntu-latest
