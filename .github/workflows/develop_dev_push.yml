@@ -24,9 +24,10 @@ jobs:
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install --update
-      - run: aws configure
-          AWS Access Key ID [None]: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS Secret Access Key [None]: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          Default region name [None]: ap-south-1
-          Default output format [None]: json
-      - run: aws s3 ls
+      - run:
+          aws configure
+          # AWS Access Key ID [None]: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          # AWS Secret Access Key [None]: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # Default region name [None]: ap-south-1
+          # Default output format [None]: json
+      # - run: aws s3 ls
