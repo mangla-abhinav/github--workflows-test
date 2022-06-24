@@ -3,7 +3,9 @@ on: [push]
 jobs:
   stylelint:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+          with:
+            ref: my-branch
       - uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
