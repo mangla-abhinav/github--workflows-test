@@ -1,7 +1,12 @@
-name: s3
+name: ci/cd
 on: [push]
 jobs:
   stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-hub/stylelint@v1.1.3
+  s3:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
