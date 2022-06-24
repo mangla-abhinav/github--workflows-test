@@ -1,4 +1,4 @@
-name: stylelint
+name: s3
 on: [push]
 jobs:
   stylelint:
