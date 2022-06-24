@@ -1,8 +1,7 @@
-name: stylelint
+name: feature_stylelint_check
 on:
   push:
     branches:
-      - develop
       - feature
 jobs:
   stylelint:
