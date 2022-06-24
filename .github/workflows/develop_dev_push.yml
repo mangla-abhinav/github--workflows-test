@@ -11,8 +11,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install --save-dev stylelint stylelint-config-standard
-      - run: npx stylelint "**/*.css"
+      # - run: npm install --save-dev stylelint stylelint-config-standard
+      # - run: npx stylelint "**/*.css"
   s3_sync:
     needs: stylelint
     runs-on: ubuntu-latest
@@ -23,4 +23,4 @@ jobs:
           node-version: '14'
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
-      - run: ./aws/install
+      - run: ./aws/install --update
