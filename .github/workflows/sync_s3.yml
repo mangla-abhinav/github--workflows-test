@@ -1,9 +1,9 @@
-name: stylelint2
+name: s3_sync
 on:
   push:
-    branches:
-      - develop
-      - feature
+    workflow_run:
+      workflows: ['stylelint']
+      branches: [develop]
 jobs:
   stylelint-2:
     runs-on: ubuntu-latest
