@@ -2,11 +2,14 @@ name: ci/cd
 on: [push]
 jobs:
   stylelint:
+    name: stylelint-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions-hub/stylelint@v1.1.3
   s3:
+    name: s3-bucket-sync
+    needs: stylelint-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -19,6 +22,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
   Invalidate_CloudFront:
+    name: Invalidate_CloudFront
+    needs: s3-bucket-sync
     runs-on: ubuntu-latest
     steps:
       - uses: chetan/invalidate-cloudfront-action@v2
