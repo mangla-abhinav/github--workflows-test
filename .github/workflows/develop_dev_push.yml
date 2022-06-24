@@ -25,7 +25,6 @@ jobs:
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install --update
       - run: aws configure
-        with:
           AWS Access Key ID [None]: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS Secret Access Key [None]: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           Default region name [None]: ap-south-1
