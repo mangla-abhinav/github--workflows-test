@@ -23,4 +23,4 @@ jobs:
           node-version: '14'
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
-      - run: ./aws/install --update
+      - run: sudo ./aws/install --update
